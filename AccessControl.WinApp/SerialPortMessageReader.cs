@@ -72,6 +72,9 @@ namespace AccessControl.WinApp
 
         public void Stop()
         {
+            if (_serialPort == null)
+                return;
+
             _serialPort.Close();
             _serialPort.Dispose();
         }

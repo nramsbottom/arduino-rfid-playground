@@ -106,6 +106,12 @@ namespace AccessControl.WinApp
         {
             _serialPortMessageReader.Stop();
         }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            _serialPortMessageReader.Stop();
+            Application.Exit();
+        }
     }
 
 }
