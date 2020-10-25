@@ -18,15 +18,15 @@ namespace AccessControl.WinApp
             _serialPortMessageReader = new SerialPortMessageReader("COM5", 9600);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            trayIcon.Icon = Resource1.Tray;
+            Icon = trayIcon.Icon = Resource1.Tray;
             trayIcon.ContextMenuStrip = trayMenuStrip;
 
             _serialPortMessageReader.MessageReceived += SerialPortMessageReader_MessageReceived;
             _serialPortMessageReader.Start();
 
-            MessageReceived += Form1_MessageReceived;
+            MessageReceived += MainForm_MessageReceived;
         }
 
         private void SerialPortMessageReader_MessageReceived(object sender, string e)
@@ -34,7 +34,7 @@ namespace AccessControl.WinApp
             MessageReceived?.Invoke(sender, e);
         }
 
-        private void Form1_MessageReceived(object sender, string e)
+        private void MainForm_MessageReceived(object sender, string e)
         {
             Debug.WriteLine($"Received message: {e}");
 
@@ -85,7 +85,7 @@ namespace AccessControl.WinApp
             settingsToolStripMenuItem_Click(sender, null);
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
+        private void MainForm_Resize(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Minimized)
             {
