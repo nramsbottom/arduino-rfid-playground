@@ -15,7 +15,7 @@ namespace AccessControl.WinApp
         public MainForm()
         {
             InitializeComponent();
-            _serialPortMessageReader = new SerialPortMessageReader("COM5", 9600);
+            _serialPortMessageReader = new SerialPortMessageReader("COM5", 115200);
         }
 
         private void MainForm_Load(object sender, EventArgs e)

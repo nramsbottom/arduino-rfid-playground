@@ -27,7 +27,7 @@ namespace AccessControl.WinApp
         {
             _serialPort = new SerialPort();
             _serialPort.PortName = _portName;
-            _serialPort.BaudRate = _baudRate; ;
+            _serialPort.BaudRate = _baudRate;
             _serialPort.Parity = Parity.None;
             _serialPort.DataBits = 8;
             _serialPort.Open();
@@ -73,7 +73,9 @@ namespace AccessControl.WinApp
         public void Stop()
         {
             if (_serialPort == null)
+            {
                 return;
+            }
 
             _serialPort.Close();
             _serialPort.Dispose();

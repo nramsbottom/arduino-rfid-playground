@@ -5,7 +5,7 @@ MFRC522 mfrc522(10, 9); // MFRC522 mfrc522(SS_PIN, RST_PIN)
 
 void setup() {
 
-  Serial.begin(9600);
+  Serial.begin(115200);
   SPI.begin();      // Init SPI bus
   mfrc522.PCD_Init();   // Init MFRC522
 
@@ -34,7 +34,7 @@ void loop() {
 
   Serial.print("CARD");
   Serial.print("|");
-  Serial.print(tag);
-  Serial.print("\r\n");
+  Serial.println(tag);
+
   delay(2000);
 }
